@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+from commands.backup import BackupCommand
 import asyncio
 import json
 import logging
@@ -41,6 +42,7 @@ async def setup():
         # Load your custom extensions (cogs)
         await bot.load_extension('commands.clean')
         await bot.load_extension('commands.stats')
+        await bot.load_extension('commands.backup')
         # Load other extensions here
     except Exception as e:
         logging.error(f'Failed to load extension: {e}')
